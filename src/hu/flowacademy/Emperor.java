@@ -9,7 +9,7 @@ public class Emperor  implements  ForceSensitive, Sith{
     }
 
     @Override
-    public float howBigIsHisForce() {
+    public double howBigIsHisForce() {
         return 0;
     }
 
