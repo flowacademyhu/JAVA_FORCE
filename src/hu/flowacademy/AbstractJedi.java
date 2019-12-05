@@ -13,6 +13,17 @@ public abstract class AbstractJedi implements ForceSensitive{
 
     @Override
     public boolean canDefeat(ForceSensitive forceSensitive) {
+        if (forceSensitive instanceof Emperor) {
+            if (this.getForce() >= 2 * forceSensitive.howBigIsHisForce()) {
+                return true;
+            }
+            return false;
+        } else if (forceSensitive instanceof AbstractJedi) {
+            if (this.getForce() > ((AbstractJedi) forceSensitive).getForce() && ((AbstractJedi) forceSensitive).canTurn) {
+                return true;
+            }
+            return false;
+        }
         return false;
     }
 
