@@ -4,15 +4,16 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.util.ArrayList;
 import java.io.IOException;
+import java.util.List;
 
 public class StarWars {
-    private ArrayList<String> listOfPlayers = new ArrayList<>();
+    private static List<ForceSensitive> listOfPlayers = new ArrayList<>();
 
     public StarWars() throws IOException {
     }
 
 
-    public void actors() throws IOException {
+    public static void actors() throws IOException {
 
         BufferedReader bufReader = new BufferedReader(new FileReader("./players.txt"));
         String line = bufReader.readLine();
@@ -22,5 +23,11 @@ public class StarWars {
         }
         bufReader.close();
 
+    }
+
+    public static void siths() {
+        for(ForceSensitive fs : listOfPlayers) {
+            System.out.println(fs.toString());
+        }
     }
 }
