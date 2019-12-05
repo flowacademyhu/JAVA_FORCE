@@ -11,10 +11,10 @@ public class StarWars {
     private static List<ForceSensitive> listOfPlayers = new ArrayList<>();
 
 
-    public StarWars() throws IOException {
+    public StarWars() {
     }
 
-    public static void actors() throws IOException {
+    public static void actors() {
 
         BufferedReader bufReader = new BufferedReader(new FileReader("./players.txt"));
         String line = bufReader.readLine();
