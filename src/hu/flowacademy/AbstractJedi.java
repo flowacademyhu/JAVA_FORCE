@@ -13,9 +13,7 @@ public abstract class AbstractJedi implements ForceSensitive{
 
     @Override
     public boolean canDefeat(ForceSensitive forceSensitive) {
-        if (forceSensitive instanceof Emperor) {
-        } else if (forceSensitive instanceof AbstractJedi) {
-        }
+        return false;
     }
 
     @Override
