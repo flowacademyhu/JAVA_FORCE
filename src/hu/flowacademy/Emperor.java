@@ -35,7 +35,7 @@ public class Emperor  implements  ForceSensitive, Sith{
 
     @Override
     public double howBigIsHisForce() {
-        return 0;
+        return this.emperorPower;
     }
 
     @Override
@@ -47,10 +47,6 @@ public class Emperor  implements  ForceSensitive, Sith{
         emperorPower = evilMeter*2;
 
     }
-
-
-
-
 
     @Override
     public String toString() {

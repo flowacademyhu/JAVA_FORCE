@@ -1,10 +1,10 @@
 package hu.flowacademy;
 
 public abstract class AbstractJedi implements ForceSensitive{
-    private float force;
+    private double force;
     private boolean canTurn;
 
-    public AbstractJedi(float force, boolean canTurn) {
+    public AbstractJedi(double force, boolean canTurn) {
         this.force = force;
         this.canTurn = canTurn;
     }
@@ -14,10 +14,17 @@ public abstract class AbstractJedi implements ForceSensitive{
     @Override
     public boolean canDefeat(ForceSensitive forceSensitive) {
         if (forceSensitive instanceof Emperor) {
-
+            if (this.getForce() >= 2 * forceSensitive.howBigIsHisForce()) {
+                return true;
+            }
+            return false;
         } else if (forceSensitive instanceof AbstractJedi) {
-
+            if (this.getForce() > ((AbstractJedi) forceSensitive).getForce() && ((AbstractJedi) forceSensitive).canTurn) {
+                return true;
+            }
+            return false;
         }
+        return false;
     }
 
     @Override
@@ -29,7 +36,7 @@ public abstract class AbstractJedi implements ForceSensitive{
         return force;
     }
 
-    public void setForce(float force) {
+    public void setForce(double force) {
         this.force = force;
     }
 
