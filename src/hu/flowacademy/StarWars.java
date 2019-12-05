@@ -7,7 +7,9 @@ import java.io.IOException;
 import java.util.List;
 
 public class StarWars {
-    public static ArrayList<ForceSensitive> listOfPlayers = new ArrayList<>();
+
+    private static List<ForceSensitive> listOfPlayers = new ArrayList<>();
+
 
     public StarWars() throws IOException {
     }
@@ -36,6 +38,7 @@ public class StarWars {
         }
     }
 
+
     private static void wraithMaker(ForceSensitive person, int num) {
         if (!(person instanceof Sith)) {
             return;
@@ -46,4 +49,10 @@ public class StarWars {
     }
 
 
+
+    public static void siths() {
+        for(ForceSensitive fs : listOfPlayers) {
+            System.out.println(fs.toString());
+        }
+    }
 }
