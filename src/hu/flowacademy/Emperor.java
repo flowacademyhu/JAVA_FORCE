@@ -27,21 +27,25 @@ public class Emperor  implements  ForceSensitive, Sith{
 
     @Override
     public boolean canDefeat(ForceSensitive forceSensitive) {
-        return false;
-    }
+        if(forceSensitive.howBigIsHisForce() < evilMeter){
+            return true;
+        }
+            return false;
+        }
 
     @Override
-    public float howBigIsHisForce() {
+    public double howBigIsHisForce() {
         return 0;
     }
 
     @Override
     public void letOutYourWraith() {
-
+        evilMeter += 50;
     }
 
     public void setEmperorPower(){
         emperorPower = evilMeter*2;
+
     }
 
 

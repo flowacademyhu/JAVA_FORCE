@@ -21,11 +21,11 @@ public abstract class AbstractJedi implements ForceSensitive{
     }
 
     @Override
-    public float howBigIsHisForce() {
+    public double howBigIsHisForce() {
         return this.force;
     }
 
-    public float getForce() {
+    public double getForce() {
         return force;
     }
 
