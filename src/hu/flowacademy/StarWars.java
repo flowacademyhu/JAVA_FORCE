@@ -1,6 +1,7 @@
 package hu.flowacademy;
 
 import java.io.BufferedReader;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.util.ArrayList;
 import java.io.IOException;
@@ -14,15 +15,19 @@ public class StarWars {
     public StarWars() throws IOException {
     }
 
-    public static void actors() throws IOException {
+    public static void actors(){
 
-        BufferedReader bufReader = new BufferedReader(new FileReader("./players.txt"));
-        String line = bufReader.readLine();
-        while (line != null) {
-            listOfPlayers.add(objectMaker(line));
-            line = bufReader.readLine();
+        try{
+            BufferedReader bufReader = new BufferedReader(new FileReader("./players.txt"));
+            String line = bufReader.readLine();
+            while (line != null) {
+                listOfPlayers.add(objectMaker(line));
+                line = bufReader.readLine();
+            }
+            bufReader.close();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
-        bufReader.close();
     }
 
     private static ForceSensitive objectMaker(String line) {
