@@ -31,8 +31,8 @@ public class Emperor  implements  ForceSensitive, Sith{
     }
 
     @Override
-    public float howBigIsHisForce() {
-        return 0;
+    public double howBigIsHisForce() {
+        return this.emperorPower;
     }
 
     @Override
